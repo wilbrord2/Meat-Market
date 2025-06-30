@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-default-black: #000;
+  --color-default-blue: #000824;
+  --color-default-red: #b32b29;
+  --color-default-white: #fff;
+  --color-default-grey: #a3a3a5;
+  --color-hover-color: #e1aaa9;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hoverStyle:hover {
+  color: var(--color-default-red);
+  transition: color 0.3s ease-in-out;
+  background-color: var(--color-hover-color);
+  border: 1px solid var(--color-default-red);
+  cursor: pointer;
+}
