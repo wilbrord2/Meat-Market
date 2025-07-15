@@ -8,6 +8,7 @@ import { BestSeller, MeatCategory } from "@/app/costants";
 import BestSellerCard from "@/app/components/cards/bestSellerCard";
 import CategoryCard from "@/app/components/cards/categoryCard";
 import ProductList from "@/app/components/products/productList";
+import Link from "next/link";
 
 const ShoppingPage = () => {
   return (
@@ -20,9 +21,11 @@ const ShoppingPage = () => {
 
           <div className="flex flex-wrap gap-8 justify-center lg:justify-between items-center pt-12">
             {MeatCategory.map((cat, idx) => (
-              <div key={idx} className="w-full max-w-[200px]">
-                <CategoryCard image={meatImage.src} name={cat.title} />
-              </div>
+              <Link href={`/category/${cat.link}`} key={idx}>
+                <div className="w-full max-w-[200px]">
+                  <CategoryCard image={meatImage.src} name={cat.title} />
+                </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     ],
   },
   themeColor: "#ffffff",
-  manifest: "/site.webmanifest",
+  // manifest: "/site.webmanifest",
   robots: {
     index: true,
     follow: true,

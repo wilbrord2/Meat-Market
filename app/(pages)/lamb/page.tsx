@@ -13,7 +13,7 @@ const LambPage = () => {
       <HeroSection title="Lamb" backgroundImage={meatImage.src} />
       <div className="w-full px-4 md:px-8 lg:px-16 space-y-12 py-6">
         <div className="space-y-4">
-          <div className="flex flex-row lg:items-center justify-center gap-4 lg:gap-6">
+          <div className="flex flex-row flex-wrap lg:items-center md:justify-center gap-4 lg:gap-6">
             {TypesOfMeat.map((link, idx) => (
               <Link
                 key={idx}

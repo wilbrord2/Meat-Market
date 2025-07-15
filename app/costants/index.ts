@@ -93,12 +93,12 @@ export const ProductData = [
 ];
 
 export const MeatCategory = [
-  { title: "Beef", link: "/category/beef" },
-  { title: "Goat Meat", link: "/category/goat" },
-  { title: "Pork", link: "/category/pork" },
-  { title: "Chicken", link: "/category/chicken" },
-  { title: "Turkey", link: "/category/turkey" },
-  { title: "Lamb", link: "/category/lamb" },
+  { title: "Beef", link: "/beef" },
+  { title: "Goat Meat", link: "/goat" },
+  { title: "Pork", link: "/pork" },
+  { title: "Chicken", link: "/chicken" },
+  { title: "Turkey", link: "/turkey" },
+  { title: "Lamb", link: "/lamb" },
 ];
 
 export const Reviews = [
@@ -152,4 +152,36 @@ export const TypesOfMeat = [
   { title: "Steaks", link: "#" },
   { title: "Stew meat", link: "#" },
   { title: "Organ Meats", link: "#" },
+];
+
+export const cartItems = [
+  {
+    name: "Beef Rib eye",
+    size: "1kg",
+    category: "Beef Ribs (Riblet category)",
+    price: 10000,
+    quantity: 1,
+    image: meatImage,
+  },
+  {
+    name: "Beef Rib eye",
+    size: "1.5kg",
+    category: "Beef Ribs (Riblet category)",
+    price: 15000,
+    quantity: 2,
+    image: meatImage,
+  },
+];
+
+export const suggestedItems = [
+  {
+    name: "Ground Meat",
+    price: 5000,
+    image: meatImage,
+  },
+  {
+    name: "Ground Meat",
+    price: 5000,
+    image: meatImage,
+  },
 ];

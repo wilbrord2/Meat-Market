@@ -4,8 +4,10 @@ import ButtonIcon from "../button/buttonIcon";
 import { FaPlus } from "react-icons/fa";
 import Image from "next/image";
 import { renderStars } from "./reviewCard";
+import { useRouter } from "next/navigation";
 
 interface ProductCardProps {
+  id?: number;
   image: string;
   title: string;
   price: number;
@@ -14,15 +16,20 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
+  id = 1,
   image,
   title,
   price,
   description,
   rating,
 }) => {
+  const router = useRouter();
   return (
     <div className="w-full h-full rounded-lg duration-500 flex flex-col gap-4 justify-between">
-      <div className="w-full h-64 relative overflow-hidden ">
+      <div
+        onClick={() => router.push(`/product/${id}`)}
+        className="w-full h-64 relative overflow-hidden cursor-pointer"
+      >
         <Image
           src={image}
           alt={title}
@@ -40,8 +47,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {price.toLocaleString()} RWF
         </span>
         <div className="w-full lg:w-1/2">
-
-        <ButtonIcon icon={<FaPlus />} title="Add to box" />
+          <ButtonIcon icon={<FaPlus />} title="Add to box" />
         </div>
       </div>
     </div>

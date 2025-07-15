@@ -8,6 +8,7 @@ import logo from "@/public/images/logo/meat-market-log.png";
 import { LuMapPin } from "react-icons/lu";
 import { FaRegUser } from "react-icons/fa6";
 import { BsBasket3 } from "react-icons/bs";
+import { useAppContext } from "@/app/context";
 const navbarLinks = [
   { title: "Best Sellers", link: "/best-seller" },
   { title: "Deals", link: "/deals" },
@@ -23,6 +24,7 @@ const navbarLinks = [
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const { setActiveModalId } = useAppContext();
 
   const toggleMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -66,10 +68,15 @@ const Navbar = () => {
 
         {/* Icons */}
         <div className="hidden lg:flex gap-4 items-center text-xl text-gray-700">
-          <LuMapPin />
-          <FaRegUser />
-          <FaRegHeart />
-          <BsBasket3 />
+          <LuMapPin className="hover:text-default-red" />
+          <Link href="/signin" className="hover:text-default-red">
+            <FaRegUser />
+          </Link>
+          <FaRegHeart className="hover:text-default-red" />
+          <BsBasket3
+            onClick={() => setActiveModalId("box")}
+            className="hover:text-default-red cursor-pointer"
+          />
         </div>
 
         {/* Mobile Menu Button */}
@@ -106,7 +113,7 @@ const Navbar = () => {
           <LuMapPin />
           <FaRegUser />
           <FaRegHeart />
-          <BsBasket3 />
+          <BsBasket3 onClick={() => setActiveModalId("box")} />
         </div>
       </div>
     </nav>
